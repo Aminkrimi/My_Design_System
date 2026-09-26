@@ -16,7 +16,7 @@
   --mds-color-bg-muted: var(--mds-gray-100);
   --mds-color-surface: var(--mds-white);
   --mds-color-surface-raised: var(--mds-white);
-  --mds-color-overlay: rgb(2 6 23 / 0.5);
+  --mds-color-overlay: rgb(14 13 24 / 0.55);
 
   /* Text */
   --mds-color-text: var(--mds-gray-900);
@@ -28,28 +28,28 @@
   /* Borders */
   --mds-color-border: var(--mds-gray-200);
   --mds-color-border-strong: var(--mds-gray-500);
-  --mds-color-focus-ring: var(--mds-blue-600);
+  --mds-color-focus-ring: var(--mds-violet-600);
 
   /* Primary */
-  --mds-color-primary: var(--mds-blue-600);
-  --mds-color-primary-hover: var(--mds-blue-700);
-  --mds-color-primary-active: var(--mds-blue-800);
-  --mds-color-primary-subtle: var(--mds-blue-50);
-  --mds-color-primary-text: var(--mds-blue-700);
+  --mds-color-primary: var(--mds-violet-600);
+  --mds-color-primary-hover: var(--mds-violet-700);
+  --mds-color-primary-active: var(--mds-violet-800);
+  --mds-color-primary-subtle: var(--mds-violet-50);
+  --mds-color-primary-text: var(--mds-violet-700);
   --mds-color-on-primary: var(--mds-white);
 
   /* Danger */
-  --mds-color-danger: var(--mds-red-600);
-  --mds-color-danger-hover: var(--mds-red-700);
-  --mds-color-danger-active: var(--mds-red-800);
-  --mds-color-danger-subtle: var(--mds-red-50);
-  --mds-color-danger-text: var(--mds-red-700);
+  --mds-color-danger: var(--mds-rose-600);
+  --mds-color-danger-hover: var(--mds-rose-700);
+  --mds-color-danger-active: var(--mds-rose-800);
+  --mds-color-danger-subtle: var(--mds-rose-50);
+  --mds-color-danger-text: var(--mds-rose-700);
   --mds-color-on-danger: var(--mds-white);
 
   /* Success */
-  --mds-color-success: var(--mds-green-700);
-  --mds-color-success-subtle: var(--mds-green-50);
-  --mds-color-success-text: var(--mds-green-800);
+  --mds-color-success: var(--mds-emerald-700);
+  --mds-color-success-subtle: var(--mds-emerald-50);
+  --mds-color-success-text: var(--mds-emerald-800);
   --mds-color-on-success: var(--mds-white);
 
   /* Warning */
@@ -59,16 +59,16 @@
   --mds-color-on-warning: var(--mds-gray-950);
 
   /* Info */
-  --mds-color-info: var(--mds-blue-600);
-  --mds-color-info-subtle: var(--mds-blue-50);
-  --mds-color-info-text: var(--mds-blue-700);
+  --mds-color-info: var(--mds-sky-700);
+  --mds-color-info-subtle: var(--mds-sky-50);
+  --mds-color-info-text: var(--mds-sky-800);
   --mds-color-on-info: var(--mds-white);
 
   /* Elevation */
-  --mds-shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
-  --mds-shadow-md: 0 4px 8px -2px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.06);
-  --mds-shadow-lg: 0 12px 20px -4px rgb(15 23 42 / 0.12), 0 4px 8px -4px rgb(15 23 42 / 0.08);
-  --mds-shadow-xl: 0 24px 40px -8px rgb(15 23 42 / 0.18), 0 8px 16px -8px rgb(15 23 42 / 0.1);
+  --mds-shadow-sm: 0 1px 2px 0 rgb(37 24 82 / 0.06);
+  --mds-shadow-md: 0 4px 8px -2px rgb(37 24 82 / 0.1), 0 2px 4px -2px rgb(37 24 82 / 0.06);
+  --mds-shadow-lg: 0 12px 20px -4px rgb(37 24 82 / 0.12), 0 4px 8px -4px rgb(37 24 82 / 0.08);
+  --mds-shadow-xl: 0 24px 40px -8px rgb(37 24 82 / 0.18), 0 8px 16px -8px rgb(37 24 82 / 0.1);
 }
 
 [data-theme='dark'] {
@@ -89,25 +89,25 @@
 
   --mds-color-border: var(--mds-gray-800);
   --mds-color-border-strong: var(--mds-gray-500);
-  --mds-color-focus-ring: var(--mds-blue-400);
+  --mds-color-focus-ring: var(--mds-violet-400);
 
-  --mds-color-primary: var(--mds-blue-400);
-  --mds-color-primary-hover: var(--mds-blue-300);
-  --mds-color-primary-active: var(--mds-blue-200);
-  --mds-color-primary-subtle: var(--mds-blue-950);
-  --mds-color-primary-text: var(--mds-blue-300);
+  --mds-color-primary: var(--mds-violet-400);
+  --mds-color-primary-hover: var(--mds-violet-300);
+  --mds-color-primary-active: var(--mds-violet-200);
+  --mds-color-primary-subtle: var(--mds-violet-950);
+  --mds-color-primary-text: var(--mds-violet-300);
   --mds-color-on-primary: var(--mds-gray-950);
 
-  --mds-color-danger: var(--mds-red-400);
-  --mds-color-danger-hover: var(--mds-red-300);
-  --mds-color-danger-active: var(--mds-red-200);
-  --mds-color-danger-subtle: var(--mds-red-950);
-  --mds-color-danger-text: var(--mds-red-300);
+  --mds-color-danger: var(--mds-rose-400);
+  --mds-color-danger-hover: var(--mds-rose-300);
+  --mds-color-danger-active: var(--mds-rose-200);
+  --mds-color-danger-subtle: var(--mds-rose-950);
+  --mds-color-danger-text: var(--mds-rose-300);
   --mds-color-on-danger: var(--mds-gray-950);
 
-  --mds-color-success: var(--mds-green-400);
-  --mds-color-success-subtle: var(--mds-green-950);
-  --mds-color-success-text: var(--mds-green-300);
+  --mds-color-success: var(--mds-emerald-400);
+  --mds-color-success-subtle: var(--mds-emerald-950);
+  --mds-color-success-text: var(--mds-emerald-300);
   --mds-color-on-success: var(--mds-gray-950);
 
   --mds-color-warning: var(--mds-amber-400);
@@ -115,9 +115,9 @@
   --mds-color-warning-text: var(--mds-amber-300);
   --mds-color-on-warning: var(--mds-gray-950);
 
-  --mds-color-info: var(--mds-blue-400);
-  --mds-color-info-subtle: var(--mds-blue-950);
-  --mds-color-info-text: var(--mds-blue-300);
+  --mds-color-info: var(--mds-sky-400);
+  --mds-color-info-subtle: var(--mds-sky-950);
+  --mds-color-info-text: var(--mds-sky-300);
   --mds-color-on-info: var(--mds-gray-950);
 
   --mds-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
