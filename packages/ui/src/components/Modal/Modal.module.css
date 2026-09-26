@@ -1,0 +1,171 @@
+/*
+ * The panel sits inside the overlay: the overlay centers it with grid and is
+ * the single stacking context for the whole modal layer.
+ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--mds-z-modal);
+  display: grid;
+  place-items: center;
+  padding: var(--mds-space-4);
+  background-color: var(--mds-color-overlay);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  max-block-size: calc(100dvh - 2 * var(--mds-space-4));
+  overflow: hidden;
+  border: 1px solid var(--mds-color-border);
+  border-radius: var(--mds-radius-xl);
+  background-color: var(--mds-color-surface-raised);
+  color: var(--mds-color-text);
+  box-shadow: var(--mds-shadow-xl);
+  font-family: inherit;
+}
+
+/* Radix focuses the panel itself when it holds nothing focusable. */
+.content:focus {
+  outline: none;
+}
+
+.content:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---- Sizes ---- */
+.sm {
+  max-inline-size: 24rem;
+}
+
+.md {
+  max-inline-size: 32rem;
+}
+
+.lg {
+  max-inline-size: 48rem;
+}
+
+/* ---- Regions ---- */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-1);
+  padding-block: var(--mds-space-6) var(--mds-space-2);
+  /* Leaves room for the close button at the inline-end. */
+  padding-inline: var(--mds-space-6) var(--mds-space-12);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--mds-font-size-lg);
+  font-weight: var(--mds-font-weight-semibold);
+  line-height: var(--mds-line-height-tight);
+}
+
+.description {
+  margin: 0;
+  font-size: var(--mds-font-size-sm);
+  line-height: var(--mds-line-height-normal);
+  color: var(--mds-color-text-muted);
+}
+
+.body {
+  flex: 1;
+  min-block-size: 0;
+  overflow-y: auto;
+  padding-block: var(--mds-space-2);
+  padding-inline: var(--mds-space-6);
+  font-size: var(--mds-font-size-sm);
+  line-height: var(--mds-line-height-normal);
+}
+
+/* Focusable only while it overflows (see ModalBody). */
+.body:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--mds-space-3);
+  padding-block: var(--mds-space-4) var(--mds-space-6);
+  padding-inline: var(--mds-space-6);
+}
+
+.close {
+  position: absolute;
+  inset-block-start: var(--mds-space-4);
+  inset-inline-end: var(--mds-space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--mds-radius-md);
+  background: transparent;
+  color: var(--mds-color-text-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--mds-duration-fast) var(--mds-easing-standard),
+    color var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+.close:hover {
+  background-color: var(--mds-color-bg-muted);
+  color: var(--mds-color-text);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.close > svg {
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+}
+
+/* ---- Motion (durations drop to 0 under prefers-reduced-motion) ---- */
+.overlay[data-state='open'] {
+  animation: fade-in var(--mds-duration-normal) var(--mds-easing-standard);
+}
+
+.overlay[data-state='closed'] {
+  animation: fade-out var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+.content[data-state='open'] {
+  animation: pop-in var(--mds-duration-normal) var(--mds-easing-standard);
+}
+
+.content[data-state='closed'] {
+  animation: fade-out var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.98);
+  }
+}

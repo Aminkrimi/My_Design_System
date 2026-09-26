@@ -1,0 +1,177 @@
+/* The region toasts render into: pinned to the block-end, inline-end corner. */
+.viewport {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  z-index: var(--mds-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-3);
+  inline-size: 100%;
+  max-inline-size: 26rem;
+  max-block-size: 100dvh;
+  margin: 0;
+  padding: var(--mds-space-4);
+  list-style: none;
+  outline: none;
+}
+
+.viewport:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--mds-space-3);
+  padding-block: var(--mds-space-3);
+  padding-inline: var(--mds-space-4) var(--mds-space-3);
+  border: 1px solid var(--mds-color-border);
+  /* A colored inline-start edge carries the variant alongside the icon. */
+  border-inline-start-width: 4px;
+  border-radius: var(--mds-radius-lg);
+  background-color: var(--mds-color-surface-raised);
+  color: var(--mds-color-text);
+  box-shadow: var(--mds-shadow-lg);
+  font-family: inherit;
+}
+
+.toast:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---- Variants ---- */
+.info {
+  border-inline-start-color: var(--mds-color-info);
+}
+.info .icon {
+  color: var(--mds-color-info-text);
+}
+
+.success {
+  border-inline-start-color: var(--mds-color-success);
+}
+.success .icon {
+  color: var(--mds-color-success-text);
+}
+
+.error {
+  border-inline-start-color: var(--mds-color-danger);
+}
+.error .icon {
+  color: var(--mds-color-danger-text);
+}
+
+/* ---- Parts ---- */
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding-block-start: 0.125rem;
+}
+
+.icon > svg {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--mds-space-0-5);
+  min-inline-size: 0;
+  padding-block: 0.125rem;
+}
+
+.title {
+  font-size: var(--mds-font-size-sm);
+  font-weight: var(--mds-font-weight-semibold);
+  line-height: var(--mds-line-height-normal);
+}
+
+.description {
+  font-size: var(--mds-font-size-sm);
+  line-height: var(--mds-line-height-normal);
+  color: var(--mds-color-text-muted);
+}
+
+.close {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--mds-radius-md);
+  background: transparent;
+  color: var(--mds-color-text-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--mds-duration-fast) var(--mds-easing-standard),
+    color var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+.close:hover {
+  background-color: var(--mds-color-bg-muted);
+  color: var(--mds-color-text);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.close > svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+}
+
+/* ---- Motion (durations drop to 0 under prefers-reduced-motion) ---- */
+/* --mds-dir-flip makes "slide in from the inline-end" correct in LTR and RTL. */
+.toast[data-state='open'] {
+  animation: slide-in var(--mds-duration-slow) var(--mds-easing-emphasized);
+}
+
+.toast[data-state='closed'] {
+  animation: fade-out var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+.toast[data-swipe='move'] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+.toast[data-swipe='cancel'] {
+  transform: translateX(0);
+  transition: transform var(--mds-duration-normal) var(--mds-easing-standard);
+}
+
+.toast[data-swipe='end'] {
+  animation: swipe-out var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% * var(--mds-dir-flip)));
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes swipe-out {
+  from {
+    transform: translateX(var(--radix-toast-swipe-end-x));
+  }
+  to {
+    opacity: 0;
+    transform: translateX(calc(100% * var(--mds-dir-flip)));
+  }
+}
