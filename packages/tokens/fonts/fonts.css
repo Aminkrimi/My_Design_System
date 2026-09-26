@@ -1,58 +1,38 @@
 /*
- * IRANSansX web font, scoped to Arabic-script code points so it only renders
- * Persian text; Latin falls through to the next family in --mds-font-family-sans.
+ * Yekan Bakh (NoEn cut: Persian/Arabic glyphs only), scoped to Arabic-script
+ * code points so it renders Persian text while Latin falls through to the
+ * next family in --mds-font-family-sans.
  *
- * IRANSansX is a commercial font (fontiran.com) and is not bundled. Drop the
- * licensed .woff2 files next to this stylesheet with these exact names:
- *   IRANSansX-Regular.woff2, IRANSansX-Medium.woff2,
- *   IRANSansX-DemiBold.woff2, IRANSansX-Bold.woff2
- * A locally installed copy is picked up first via local().
+ * Yekan Bakh is a commercial font (fontiran.com), so the .woff2 files are
+ * gitignored and never committed. Copy the licensed Webfonts/woff2 files of the
+ * NoEn cut (Regular, SemiBold, Bold) plus FontLicense.txt into this folder;
+ * without them text falls back to the next family in the stack.
+ * There is no Medium cut, so weight 500 resolves to Regular.
  */
 
 @font-face {
-  font-family: 'IRANSansX';
+  font-family: 'Yekan Bakh';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src:
-    local('IRANSansX Regular'),
-    local('IRANSansX-Regular'),
-    url('./IRANSansX-Regular.woff2') format('woff2');
+  src: url('./YekanBakhNoEn-Regular.woff2') format('woff2');
   unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
 }
 
 @font-face {
-  font-family: 'IRANSansX';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    local('IRANSansX Medium'),
-    local('IRANSansX-Medium'),
-    url('./IRANSansX-Medium.woff2') format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
-}
-
-@font-face {
-  font-family: 'IRANSansX';
+  font-family: 'Yekan Bakh';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src:
-    local('IRANSansX DemiBold'),
-    local('IRANSansX-DemiBold'),
-    url('./IRANSansX-DemiBold.woff2') format('woff2');
+  src: url('./YekanBakhNoEn-SemiBold.woff2') format('woff2');
   unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
 }
 
 @font-face {
-  font-family: 'IRANSansX';
+  font-family: 'Yekan Bakh';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src:
-    local('IRANSansX Bold'),
-    local('IRANSansX-Bold'),
-    url('./IRANSansX-Bold.woff2') format('woff2');
+  src: url('./YekanBakhNoEn-Bold.woff2') format('woff2');
   unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
 }

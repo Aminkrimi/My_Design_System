@@ -97,8 +97,10 @@
   --mds-space-16: 4rem;
 
   /* ---- Typography ---- */
+  /* Yekan Bakh covers only Arabic-script code points (see fonts/fonts.css), so
+     Persian renders in Yekan Bakh while Latin falls through to Inter / the system font. */
   --mds-font-family-sans:
-    'Vazirmatn', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', Tahoma,
+    'Yekan Bakh', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', Tahoma,
     sans-serif;
   --mds-font-family-mono:
     ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;

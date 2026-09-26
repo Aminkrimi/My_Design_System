@@ -10,3 +10,7 @@ coverage/
 !.env.example
 package-lock.json
 yarn.lock
+
+# Licensed Yekan Bakh font files stay local; the repo is public.
+packages/tokens/fonts/*.woff2
+packages/tokens/fonts/FontLicense.txt
