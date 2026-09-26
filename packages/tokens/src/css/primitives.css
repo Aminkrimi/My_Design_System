@@ -1,0 +1,140 @@
+/*
+ * Tier 1 — primitive tokens.
+ * Raw, context-free values. Components must NOT use these directly;
+ * they consume the semantic tokens in semantic.css instead.
+ */
+:root {
+  /* ---- Color scales ---- */
+  --mds-white: #ffffff;
+  --mds-black: #000000;
+
+  --mds-gray-50: #f8fafc;
+  --mds-gray-100: #f1f5f9;
+  --mds-gray-200: #e2e8f0;
+  --mds-gray-300: #cbd5e1;
+  --mds-gray-400: #94a3b8;
+  --mds-gray-500: #64748b;
+  --mds-gray-600: #475569;
+  --mds-gray-700: #334155;
+  --mds-gray-800: #1e293b;
+  --mds-gray-900: #0f172a;
+  --mds-gray-950: #020617;
+
+  --mds-blue-50: #eff6ff;
+  --mds-blue-100: #dbeafe;
+  --mds-blue-200: #bfdbfe;
+  --mds-blue-300: #93c5fd;
+  --mds-blue-400: #60a5fa;
+  --mds-blue-500: #3b82f6;
+  --mds-blue-600: #2563eb;
+  --mds-blue-700: #1d4ed8;
+  --mds-blue-800: #1e40af;
+  --mds-blue-900: #1e3a8a;
+  --mds-blue-950: #172554;
+
+  --mds-red-50: #fef2f2;
+  --mds-red-100: #fee2e2;
+  --mds-red-200: #fecaca;
+  --mds-red-300: #fca5a5;
+  --mds-red-400: #f87171;
+  --mds-red-500: #ef4444;
+  --mds-red-600: #dc2626;
+  --mds-red-700: #b91c1c;
+  --mds-red-800: #991b1b;
+  --mds-red-900: #7f1d1d;
+  --mds-red-950: #450a0a;
+
+  --mds-green-50: #f0fdf4;
+  --mds-green-100: #dcfce7;
+  --mds-green-200: #bbf7d0;
+  --mds-green-300: #86efac;
+  --mds-green-400: #4ade80;
+  --mds-green-500: #22c55e;
+  --mds-green-600: #16a34a;
+  --mds-green-700: #15803d;
+  --mds-green-800: #166534;
+  --mds-green-900: #14532d;
+  --mds-green-950: #052e16;
+
+  --mds-amber-50: #fffbeb;
+  --mds-amber-100: #fef3c7;
+  --mds-amber-200: #fde68a;
+  --mds-amber-300: #fcd34d;
+  --mds-amber-400: #fbbf24;
+  --mds-amber-500: #f59e0b;
+  --mds-amber-600: #d97706;
+  --mds-amber-700: #b45309;
+  --mds-amber-800: #92400e;
+  --mds-amber-900: #78350f;
+  --mds-amber-950: #451a03;
+
+  /* ---- Spacing (4px grid) ---- */
+  --mds-space-0: 0;
+  --mds-space-0-5: 0.125rem;
+  --mds-space-1: 0.25rem;
+  --mds-space-2: 0.5rem;
+  --mds-space-3: 0.75rem;
+  --mds-space-4: 1rem;
+  --mds-space-5: 1.25rem;
+  --mds-space-6: 1.5rem;
+  --mds-space-8: 2rem;
+  --mds-space-10: 2.5rem;
+  --mds-space-12: 3rem;
+  --mds-space-16: 4rem;
+
+  /* ---- Typography ---- */
+  --mds-font-family-sans:
+    'Vazirmatn', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', Tahoma,
+    sans-serif;
+  --mds-font-family-mono:
+    ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --mds-font-size-xs: 0.75rem;
+  --mds-font-size-sm: 0.875rem;
+  --mds-font-size-md: 1rem;
+  --mds-font-size-lg: 1.125rem;
+  --mds-font-size-xl: 1.25rem;
+  --mds-font-size-2xl: 1.5rem;
+  --mds-font-size-3xl: 1.875rem;
+  --mds-font-size-4xl: 2.25rem;
+
+  --mds-font-weight-regular: 400;
+  --mds-font-weight-medium: 500;
+  --mds-font-weight-semibold: 600;
+  --mds-font-weight-bold: 700;
+
+  /* Persian/Arabic script needs a bit more vertical room than Latin. */
+  --mds-line-height-tight: 1.25;
+  --mds-line-height-normal: 1.5;
+  --mds-line-height-relaxed: 1.75;
+
+  /* ---- Radius ---- */
+  --mds-radius-none: 0;
+  --mds-radius-sm: 0.25rem;
+  --mds-radius-md: 0.375rem;
+  --mds-radius-lg: 0.5rem;
+  --mds-radius-xl: 0.75rem;
+  --mds-radius-full: 9999px;
+
+  /* ---- Motion ---- */
+  --mds-duration-fast: 120ms;
+  --mds-duration-normal: 200ms;
+  --mds-duration-slow: 320ms;
+  --mds-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --mds-easing-emphasized: cubic-bezier(0.3, 0, 0, 1.2);
+
+  /* ---- Layering ---- */
+  --mds-z-dropdown: 1000;
+  --mds-z-overlay: 1100;
+  --mds-z-modal: 1200;
+  --mds-z-toast: 1300;
+  --mds-z-tooltip: 1400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mds-duration-fast: 0ms;
+    --mds-duration-normal: 0ms;
+    --mds-duration-slow: 0ms;
+  }
+}

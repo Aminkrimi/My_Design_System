@@ -1,0 +1,127 @@
+/*
+ * Tier 2 — semantic tokens.
+ * Named by *purpose*, not by value. This is the only layer components read.
+ * Each theme remaps the same names onto different primitives, so switching
+ * `data-theme` on any ancestor re-themes everything below it with zero JS.
+ *
+ * Light is the default (applies to :root even without the attribute).
+ */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Backgrounds & surfaces */
+  --mds-color-bg: var(--mds-white);
+  --mds-color-bg-subtle: var(--mds-gray-50);
+  --mds-color-bg-muted: var(--mds-gray-100);
+  --mds-color-surface: var(--mds-white);
+  --mds-color-surface-raised: var(--mds-white);
+  --mds-color-overlay: rgb(2 6 23 / 0.5);
+
+  /* Text */
+  --mds-color-text: var(--mds-gray-900);
+  --mds-color-text-muted: var(--mds-gray-600);
+  --mds-color-text-subtle: var(--mds-gray-500);
+  --mds-color-text-disabled: var(--mds-gray-400);
+  --mds-color-text-inverse: var(--mds-white);
+
+  /* Borders */
+  --mds-color-border: var(--mds-gray-200);
+  --mds-color-border-strong: var(--mds-gray-500);
+  --mds-color-focus-ring: var(--mds-blue-600);
+
+  /* Primary */
+  --mds-color-primary: var(--mds-blue-600);
+  --mds-color-primary-hover: var(--mds-blue-700);
+  --mds-color-primary-active: var(--mds-blue-800);
+  --mds-color-primary-subtle: var(--mds-blue-50);
+  --mds-color-primary-text: var(--mds-blue-700);
+  --mds-color-on-primary: var(--mds-white);
+
+  /* Danger */
+  --mds-color-danger: var(--mds-red-600);
+  --mds-color-danger-hover: var(--mds-red-700);
+  --mds-color-danger-active: var(--mds-red-800);
+  --mds-color-danger-subtle: var(--mds-red-50);
+  --mds-color-danger-text: var(--mds-red-700);
+  --mds-color-on-danger: var(--mds-white);
+
+  /* Success */
+  --mds-color-success: var(--mds-green-700);
+  --mds-color-success-subtle: var(--mds-green-50);
+  --mds-color-success-text: var(--mds-green-800);
+  --mds-color-on-success: var(--mds-white);
+
+  /* Warning */
+  --mds-color-warning: var(--mds-amber-500);
+  --mds-color-warning-subtle: var(--mds-amber-50);
+  --mds-color-warning-text: var(--mds-amber-800);
+  --mds-color-on-warning: var(--mds-gray-950);
+
+  /* Info */
+  --mds-color-info: var(--mds-blue-600);
+  --mds-color-info-subtle: var(--mds-blue-50);
+  --mds-color-info-text: var(--mds-blue-700);
+  --mds-color-on-info: var(--mds-white);
+
+  /* Elevation */
+  --mds-shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --mds-shadow-md: 0 4px 8px -2px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.06);
+  --mds-shadow-lg: 0 12px 20px -4px rgb(15 23 42 / 0.12), 0 4px 8px -4px rgb(15 23 42 / 0.08);
+  --mds-shadow-xl: 0 24px 40px -8px rgb(15 23 42 / 0.18), 0 8px 16px -8px rgb(15 23 42 / 0.1);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --mds-color-bg: var(--mds-gray-950);
+  --mds-color-bg-subtle: var(--mds-gray-900);
+  --mds-color-bg-muted: var(--mds-gray-800);
+  --mds-color-surface: var(--mds-gray-900);
+  --mds-color-surface-raised: var(--mds-gray-800);
+  --mds-color-overlay: rgb(0 0 0 / 0.7);
+
+  --mds-color-text: var(--mds-gray-50);
+  --mds-color-text-muted: var(--mds-gray-300);
+  --mds-color-text-subtle: var(--mds-gray-400);
+  --mds-color-text-disabled: var(--mds-gray-600);
+  --mds-color-text-inverse: var(--mds-gray-950);
+
+  --mds-color-border: var(--mds-gray-800);
+  --mds-color-border-strong: var(--mds-gray-500);
+  --mds-color-focus-ring: var(--mds-blue-400);
+
+  --mds-color-primary: var(--mds-blue-400);
+  --mds-color-primary-hover: var(--mds-blue-300);
+  --mds-color-primary-active: var(--mds-blue-200);
+  --mds-color-primary-subtle: var(--mds-blue-950);
+  --mds-color-primary-text: var(--mds-blue-300);
+  --mds-color-on-primary: var(--mds-gray-950);
+
+  --mds-color-danger: var(--mds-red-400);
+  --mds-color-danger-hover: var(--mds-red-300);
+  --mds-color-danger-active: var(--mds-red-200);
+  --mds-color-danger-subtle: var(--mds-red-950);
+  --mds-color-danger-text: var(--mds-red-300);
+  --mds-color-on-danger: var(--mds-gray-950);
+
+  --mds-color-success: var(--mds-green-400);
+  --mds-color-success-subtle: var(--mds-green-950);
+  --mds-color-success-text: var(--mds-green-300);
+  --mds-color-on-success: var(--mds-gray-950);
+
+  --mds-color-warning: var(--mds-amber-400);
+  --mds-color-warning-subtle: var(--mds-amber-950);
+  --mds-color-warning-text: var(--mds-amber-300);
+  --mds-color-on-warning: var(--mds-gray-950);
+
+  --mds-color-info: var(--mds-blue-400);
+  --mds-color-info-subtle: var(--mds-blue-950);
+  --mds-color-info-text: var(--mds-blue-300);
+  --mds-color-on-info: var(--mds-gray-950);
+
+  --mds-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --mds-shadow-md: 0 4px 8px -2px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --mds-shadow-lg: 0 12px 20px -4px rgb(0 0 0 / 0.55), 0 4px 8px -4px rgb(0 0 0 / 0.45);
+  --mds-shadow-xl: 0 24px 40px -8px rgb(0 0 0 / 0.6), 0 8px 16px -8px rgb(0 0 0 / 0.5);
+}
