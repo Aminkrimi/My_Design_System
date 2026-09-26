@@ -24,6 +24,7 @@ const config: StorybookConfig = {
         find: '@mds/tokens/tokens.css',
         replacement: fromRoot('packages/tokens/src/css/index.css'),
       },
+      { find: '@mds/tokens/fonts.css', replacement: fromRoot('packages/tokens/fonts/fonts.css') },
       { find: /^@mds\/tokens$/, replacement: fromRoot('packages/tokens/src/index.ts') },
       { find: /^@mds\/ui$/, replacement: fromRoot('packages/ui/src/index.ts') },
     ];
