@@ -17,6 +17,16 @@ const PHYSICAL = [
   ],
 ];
 
+// `padding: 1px 2px 3px 4px` means top/right/bottom/left, so it's physical too.
+const SHORTHAND = /(?<![-\w])(margin|padding|inset)\s*:\s*([^;]+)/;
+
+/** Counts space-separated values, treating `calc(…)`/`var(…)` as one value each. */
+function valueCount(value) {
+  let flat = value.replace(/!important/, '');
+  while (/\([^()]*\)/.test(flat)) flat = flat.replace(/\([^()]*\)/g, '');
+  return flat.trim().split(/\s+/).length;
+}
+
 function* cssFiles(dir) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (SKIP.has(entry.name)) continue;
@@ -37,6 +47,12 @@ for (const root of ROOTS.filter((dir) => existsSync(dir))) {
           if (pattern.test(line)) {
             problems.push(`${relative('.', file)}:${i + 1}  ${line.trim()}  → ${hint}`);
           }
+        }
+        const shorthand = SHORTHAND.exec(line);
+        if (shorthand && valueCount(shorthand[2]) === 4) {
+          problems.push(
+            `${relative('.', file)}:${i + 1}  ${line.trim()}  → use ${shorthand[1]}-block / ${shorthand[1]}-inline`,
+          );
         }
       });
   }
