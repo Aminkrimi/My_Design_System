@@ -3,7 +3,7 @@
 An accessible, **RTL-first** React component library — built with TypeScript, CSS Modules and
 design tokens as CSS custom properties.
 
-> 🚧 Work in progress. Week 1: infrastructure, tokens and Storybook are in place; components are next.
+> 🚧 Work in progress. Available so far: design tokens (light/dark, LTR/RTL), `Button`, `Input` and `VisuallyHidden`.
 
 ## Packages
 
