@@ -1,0 +1,40 @@
+{
+  "name": "my-design-system",
+  "private": true,
+  "type": "module",
+  "description": "An accessible, RTL-first React design system.",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint && eslint --max-warnings=0 scripts \"*.js\"",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "storybook": "pnpm --filter @mds/docs storybook",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky",
+    "lint:css": "node scripts/check-logical-css.mjs"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-storybook": "^10.6.0",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9",
+    "turbo": "^2.11.4",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.70.1"
+  }
+}
