@@ -1,0 +1,9 @@
+/* Make the canvas follow the active theme, edge to edge. */
+body {
+  margin: 0;
+  color: var(--mds-color-text);
+  background-color: var(--mds-color-bg);
+  transition:
+    background-color var(--mds-duration-normal) var(--mds-easing-standard),
+    color var(--mds-duration-normal) var(--mds-easing-standard);
+}

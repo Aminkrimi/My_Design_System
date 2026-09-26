@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: var(--mds-space-4);
+  margin-block-end: var(--mds-space-8);
+}
+
+.heading {
+  margin-block: var(--mds-space-6) var(--mds-space-3);
+  font-size: var(--mds-font-size-lg);
+  font-weight: var(--mds-font-weight-semibold);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-2);
+  padding: var(--mds-space-3);
+  border: 1px solid var(--mds-color-border);
+  border-radius: var(--mds-radius-lg);
+  background-color: var(--mds-color-surface);
+}
+
+.swatch {
+  block-size: 3rem;
+  border-radius: var(--mds-radius-md);
+  border: 1px solid var(--mds-color-border);
+}
+
+.name {
+  font-family: var(--mds-font-family-mono);
+  font-size: var(--mds-font-size-xs);
+  color: var(--mds-color-text-muted);
+  /* Token names are always Latin, even in RTL documents. */
+  direction: ltr;
+  text-align: start;
+  unicode-bidi: isolate;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-4);
+  padding-block: var(--mds-space-2);
+  border-block-end: 1px solid var(--mds-color-border);
+}
+
+.label {
+  inline-size: 10rem;
+  flex-shrink: 0;
+}
+
+.bar {
+  block-size: var(--mds-space-4);
+  background-color: var(--mds-color-primary);
+  border-start-end-radius: var(--mds-radius-sm);
+  border-end-end-radius: var(--mds-radius-sm);
+}
+
+.box {
+  inline-size: 5rem;
+  block-size: 5rem;
+  background-color: var(--mds-color-surface-raised);
+  border: 1px solid var(--mds-color-border);
+}

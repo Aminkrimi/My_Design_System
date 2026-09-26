@@ -1,0 +1,40 @@
+/*
+ * Minimal base styles that wire the semantic tokens into the document.
+ * Intentionally tiny — this is not a CSS reset.
+ */
+:where(html) {
+  font-family: var(--mds-font-family-sans);
+  font-size: 100%;
+  line-height: var(--mds-line-height-normal);
+  color: var(--mds-color-text);
+  background-color: var(--mds-color-bg);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:where([data-theme]) {
+  color: var(--mds-color-text);
+  background-color: var(--mds-color-bg);
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+/*
+ * Direction-aware icons (arrows, chevrons) multiply their X scale by this
+ * so they point "forward" in both LTR and RTL:
+ *   transform: scaleX(var(--mds-dir-flip));
+ */
+:root {
+  --mds-dir-flip: 1;
+}
+
+[dir='rtl'] {
+  --mds-dir-flip: -1;
+}
+
+[dir='ltr'] {
+  --mds-dir-flip: 1;
+}
