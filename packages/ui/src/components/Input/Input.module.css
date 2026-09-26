@@ -37,11 +37,16 @@
   border-color: var(--mds-color-text-muted);
 }
 
-/* The whole field (affixes included) shows one focus ring. */
+/*
+ * Focus colors the field's own border instead of drawing a detached ring.
+ * The 1px spread shadow thickens it to a 2px indicator without shifting layout;
+ * the transparent outline keeps a visible ring in forced-colors mode, where
+ * box-shadow is dropped.
+ */
 .control:focus-within {
-  outline: 2px solid var(--mds-color-focus-ring);
-  outline-offset: 1px;
   border-color: var(--mds-color-focus-ring);
+  box-shadow: 0 0 0 1px var(--mds-color-focus-ring);
+  outline: 2px solid transparent;
 }
 
 .input {
@@ -103,7 +108,8 @@
 }
 
 .invalid .control:focus-within {
-  outline-color: var(--mds-color-danger);
+  border-color: var(--mds-color-danger);
+  box-shadow: 0 0 0 1px var(--mds-color-danger);
 }
 
 .disabled .control {

@@ -16,10 +16,12 @@
       "require": "./dist/index.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./fonts/fonts.css",
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "fonts"
   ],
   "scripts": {
     "build": "tsup",

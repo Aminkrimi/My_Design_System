@@ -46,5 +46,5 @@ import '@mds/ui/styles.css';
 
 - **Commits** follow [Conventional Commits](https://www.conventionalcommits.org/) (enforced by commitlint).
 - **Styles** use logical properties only (`margin-inline-start`, never `margin-left`).
-- **Components** read semantic tokens only (`--mds-color-primary`, never `--mds-blue-600`).
+- **Components** read semantic tokens only (`--mds-color-primary`, never `--mds-violet-600`).
 - Decisions are recorded in [`docs/adr`](./docs/adr).

@@ -1,5 +1,6 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
 import type { Direction, Theme } from '@mds/tokens';
+import '@mds/tokens/fonts.css';
 import '@mds/tokens/tokens.css';
 import './preview.css';
 
