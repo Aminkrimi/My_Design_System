@@ -1,0 +1,122 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mds-space-1);
+  inline-size: 100%;
+  font-family: inherit;
+}
+
+.label {
+  font-size: var(--mds-font-size-sm);
+  font-weight: var(--mds-font-weight-medium);
+  line-height: var(--mds-line-height-normal);
+  color: var(--mds-color-text);
+}
+
+.required {
+  margin-inline-start: var(--mds-space-0-5);
+  color: var(--mds-color-danger-text);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--mds-space-2);
+  min-block-size: 2.5rem;
+  padding-inline: var(--mds-space-3);
+  border: 1px solid var(--mds-color-border-strong);
+  border-radius: var(--mds-radius-md);
+  background-color: var(--mds-color-surface);
+  color: var(--mds-color-text);
+  transition:
+    border-color var(--mds-duration-fast) var(--mds-easing-standard),
+    box-shadow var(--mds-duration-fast) var(--mds-easing-standard);
+}
+
+.control:hover {
+  border-color: var(--mds-color-text-muted);
+}
+
+/* The whole field (affixes included) shows one focus ring. */
+.control:focus-within {
+  outline: 2px solid var(--mds-color-focus-ring);
+  outline-offset: 1px;
+  border-color: var(--mds-color-focus-ring);
+}
+
+.input {
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 100%;
+  padding-block: var(--mds-space-2);
+  padding-inline: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--mds-font-size-md);
+  line-height: var(--mds-line-height-normal);
+}
+
+.input:focus,
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--mds-color-text-subtle);
+  opacity: 1;
+}
+
+.affix {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--mds-color-text-muted);
+  font-size: var(--mds-font-size-sm);
+}
+
+.affix > svg {
+  inline-size: 1.1em;
+  block-size: 1.1em;
+}
+
+.helper,
+.error {
+  margin: 0;
+  font-size: var(--mds-font-size-sm);
+  line-height: var(--mds-line-height-normal);
+}
+
+.helper {
+  color: var(--mds-color-text-muted);
+}
+
+.error {
+  color: var(--mds-color-danger-text);
+}
+
+/* ---- States ---- */
+.invalid .control {
+  border-color: var(--mds-color-danger);
+}
+
+.invalid .control:focus-within {
+  outline-color: var(--mds-color-danger);
+}
+
+.disabled .control {
+  background-color: var(--mds-color-bg-muted);
+  border-color: var(--mds-color-border);
+  cursor: not-allowed;
+}
+
+.disabled .input {
+  cursor: not-allowed;
+  color: var(--mds-color-text-muted);
+}
+
+.disabled .label {
+  color: var(--mds-color-text-muted);
+}
